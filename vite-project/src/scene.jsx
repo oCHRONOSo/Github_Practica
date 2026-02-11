@@ -9,7 +9,7 @@ import { EffectComposer, ToneMapping, Bloom } from '@react-three/postprocessing'
 const TARGET_COUNT = 7;
 
 function Model({ position, rotation, scale, onOpenModal, onTargetFound }) {
-  const { scene } = useGLTF('/models/Portfolio2_baked.glb');
+  const { scene } = useGLTF(`${import.meta.env.BASE_URL}models/Portfolio2_baked.glb`);
   const [hoveredObjects, setHoveredObjects] = useState({});
 
   useEffect(() => {
@@ -259,7 +259,7 @@ export default function Scene({ onShowIntro, onRestart }) {
 
   return (
     <>
-      <audio ref={audioRef} src="/music.mp3" loop />
+      <audio ref={audioRef} src={`${import.meta.env.BASE_URL}music.mp3`} loop />
       <div className="scene-top-buttons">
         <div className="scene-top-buttons-left">
           {onShowIntro && (
